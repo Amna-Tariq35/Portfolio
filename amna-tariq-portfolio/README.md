@@ -47,7 +47,7 @@ Open http://localhost:3000
 
 ## Deploy
 
-Push to GitHub, then import the repo on [vercel.com](https://vercel.com) — no config needed, it auto-detects Next.js.
+Push to GitHub, then import the repo on [vercel.com](https://portfolio-chi-ecru-90.vercel.app/) — no config needed, it auto-detects Next.js.
 
 ## To personalize further
 
