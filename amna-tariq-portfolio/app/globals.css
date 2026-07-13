@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #130b15;
+  background-image: radial-gradient(ellipse 70% 45% at 15% 0%, rgba(231, 181, 99, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 15%, rgba(227, 140, 130, 0.1), transparent),
+    radial-gradient(ellipse 55% 40% at 85% 90%, rgba(183, 159, 224, 0.09), transparent);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: #e7b563;
+  color: #130b15;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #e7b563;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #130b15;
+}
+::-webkit-scrollbar-thumb {
+  background: #372a3c;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a3a50;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-gradient-warm {
+  background-image: linear-gradient(135deg, #e7b563 0%, #e38c82 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-dusk {
+  background-image: linear-gradient(135deg, #e38c82 0%, #b79fe0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(245, 241, 248, 0.035);
+  border: 1px solid rgba(245, 241, 248, 0.09);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out-quart), transform 0.7s var(--ease-out-quart);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
